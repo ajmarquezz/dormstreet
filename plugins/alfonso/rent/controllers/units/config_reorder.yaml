@@ -1,0 +1,5 @@
+title: 'Reorder Categories'
+nameFrom: title
+modelClass: Alfonso\Rent\Models\Unit
+toolbar:
+    buttons: reorder_toolbar

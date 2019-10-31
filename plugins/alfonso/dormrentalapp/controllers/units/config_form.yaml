@@ -1,0 +1,10 @@
+name: Units
+form: $/alfonso/dormrentalapp/models/unit/fields.yaml
+modelClass: Alfonso\Dormrentalapp\Models\Unit
+defaultRedirect: alfonso/dormrentalapp/units
+create:
+    redirect: 'alfonso/dormrentalapp/units/update/:id'
+    redirectClose: alfonso/dormrentalapp/units
+update:
+    redirect: alfonso/dormrentalapp/units
+    redirectClose: alfonso/dormrentalapp/units

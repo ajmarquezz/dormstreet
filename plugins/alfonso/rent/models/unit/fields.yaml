@@ -1,0 +1,56 @@
+fields:
+    title:
+        label: 'Unit Title'
+        span: auto
+        required: 1
+        type: text
+    type:
+        label: 'Unit Type'
+        options:
+            Dormitory: Dormitory
+            Apartment: Apartment
+        showSearch: true
+        span: auto
+        placeholder: Dorm/Apartment
+        required: 1
+        type: dropdown
+    location:
+        label: Location
+        span: auto
+        required: 1
+        type: text
+    no_rooms:
+        label: 'No. of Rooms'
+        span: auto
+        required: 1
+        type: number
+    roomsize:
+        label: 'Room Size (sqm)'
+        span: auto
+        required: 1
+        type: number
+    description:
+        label: 'Unit Description'
+        size: small
+        span: full
+        required: 1
+        type: richeditor
+    price:
+        label: 'Price of Rent Monthly'
+        span: auto
+        required: 1
+        type: number
+    total_occupancy:
+        label: 'Total Occupancy'
+        span: auto
+        required: 1
+        type: number
+    poster:
+        label: 'Poster Upload'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

@@ -1,0 +1,11 @@
+name: Units
+modelClass: Alfonso\Rent\Models\Unit
+form: $/alfonso/rent/models/unit/fields.yaml
+defaultRedirect: alfonso/rent/units
+create:
+    redirect: 'alfonso/rent/units/update/:id'
+    redirectClose: alfonso/rent/units
+update:
+    redirect: alfonso/rent/units
+    redirectClose: alfonso/rent/units
+preview: {  }

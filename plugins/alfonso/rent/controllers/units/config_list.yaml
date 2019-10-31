@@ -1,0 +1,12 @@
+title: Units
+modelClass: Alfonso\Rent\Models\Unit
+list: $/alfonso/rent/models/unit/columns.yaml
+recordUrl: 'alfonso/rent/units/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: 1
+showCheckboxes: 1
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

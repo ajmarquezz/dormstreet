@@ -1,0 +1,33 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    type:
+        label: Type
+        type: text
+        sortable: true
+    location:
+        label: Location
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: Price
+        type: number
+        sortable: true
+    no_rooms:
+        label: 'No. of rooms'
+        type: number
+        sortable: true
+    poster:
+        label: Poster
+        type: partial
+        sortable: false
+        path: ~/plugins/alfonso/rent/models/unit/_poster_column.htm
+    created_at:
+        label: 'Created at'
+        type: datetime
+        sortable: true
+        format: j M Y H:I

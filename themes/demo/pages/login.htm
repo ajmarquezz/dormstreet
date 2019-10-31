@@ -1,0 +1,45 @@
+title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[account]
+redirect = "units"
+paramCode = "code"
+forceSecure = 0
+==
+<header style="background-color: #008E98 !important;"  class="bg-primary text-white">
+    <div class="container text-center">
+    {% if not user %}
+      <h1 style="color:white;">Welcome to DormStreet</h1>
+    {% else %}  
+     <h1 style="color:white;">DormStreet</h1>
+    {% endif %}
+      <p class="lead">The Perfect App to Find Apartments and Dormitories for Rent</p>
+    </div>
+</header>
+
+{% if not user %}
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h3>Sign in</h3>
+            {% partial account ~ '::signin' %}
+        </div>
+
+        <div class="col-md-6">
+            {% partial account ~ '::register' %}
+        </div>
+
+    </div>
+
+{% else %}
+
+    {% partial account ~ '::activation_check' %}
+
+    {% partial account ~ '::update' %}
+
+    {% partial account ~ '::deactivate_link' %}
+
+{% endif %}

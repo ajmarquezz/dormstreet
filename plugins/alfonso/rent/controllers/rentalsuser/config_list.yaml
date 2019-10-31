@@ -1,0 +1,10 @@
+title: RentalsUser
+modelClass: Alfonso\Rent\Models\Unit
+list: $/alfonso/rent/models/unit/columns.yaml
+recordUrl: alfonso/rent/rentalsuser
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: 1
+toolbar:
+    search:
+        prompt: 'backend::lang.list.search_prompt'

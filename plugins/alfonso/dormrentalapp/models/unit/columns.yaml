@@ -1,0 +1,43 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: title
+        type: text
+        searchable: true
+    slug:
+        label: slug
+        type: text
+    description:
+        label: description
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    price:
+        label: price
+        type: number
+        sortable: true
+    rooms:
+        label: rooms
+        type: number
+        sortable: true
+    type:
+        label: type
+        type: text
+        sortable: true
+    roomsize:
+        label: roomsize
+        type: number
+    occupancy:
+        label: occupancy
+        type: number
+    location:
+        label: location
+        type: text
+        searchable: true
+        sortable: true

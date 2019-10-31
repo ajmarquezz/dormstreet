@@ -1,0 +1,50 @@
+title = "Unit single"
+url = "/units/unit/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Alfonso\Dormrentalapp\Models\Unit"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <div class="container" style="height: auto; justify-content: center; align-items: center; box-shadow:  0px 3px 2px 1px rgba(0, 0, 0, .3);">
+	<!-- image -->
+	
+
+	{{record.image}}
+    <h1 style="">{{ record.title }}</h2>
+
+    <ul style="display: flex; justify-content: center; flex-wrap: wrap; margin:40px;>
+    	{%for image in record.gallery %}
+
+    		<li style=" list-style-type: none;">
+    			<a href="{{ image.path }}">
+    			<img style="margin:1px;" src="{{ image.thumb(300,300,{'mode':'crop'}) }}">
+    			</a>
+    			{% endfor %}
+    			<a href="{{ record.poster.path }}">
+    			<img style="margin:-2px;" src="{{ record.poster.thumb(300,300,{'mode':'crop'})}}" >
+    			</a>
+    		</li>
+    	
+    </ul>
+<div class="container" style="align-items:center; ">
+    <p><b>Location</b>:  {{ record.location }}</p>
+    <p><b>Price</b>:  {{ record.price }} /month</p>
+    <p><b>Roomsize(sqm)</b>: {{ record.roomsize }}</p>
+    <p><b>Rooms</b>:  {{ record.rooms }}</p>
+    <p><b>Total Occupancy</b>:  {{ record.occupancy }}</p>
+    <p><b>Description</b>:  {{record.description|raw }}</p>
+</div>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+</div>

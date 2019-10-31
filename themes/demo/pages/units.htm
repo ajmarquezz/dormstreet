@@ -1,0 +1,92 @@
+title = "Units"
+url = "/units/:page?"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Alfonso\Dormrentalapp\Models\Unit"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "unit-single"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 4
+pageNumber = "{{ :page }}"
+sortColumn = "price"
+sortDirection = "asc"
+
+[session]
+security = "user"
+redirect = "login"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="container" style="height: auto; width: 1300px; display: flex; justify-content: center; align-items: center;">
+
+
+<ul style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; " class="record-list">
+    {% for record in records %}
+
+    <li style="margin:30px; list-style-type: none;">
+    	<a style="text-decoration: none" href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+
+        <div class="" style=" height:700px; width: 400px; box-shadow:  0px 3px 2px 1px rgba(0, 0, 0, .3); ">
+        	<img src="{{ record.poster.thumb(400, 300, {'mode':'crop'}) }} " class="card-img-top" style="">
+  			<div class="card-body" style="padding:10px;">
+
+        	<h3>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                {% endif %}
+
+                {{ record.title }}
+
+                {% if detailsPage %}
+
+                {% endif %}
+            {% endspaceless %}
+            </h3>
+
+           	<div style="color: black">
+            <p>{{ record.price}} /month</p>
+            <p>{{ record.location}}</p>
+            <p>{{record.description|raw }}</p>
+            </div>
+
+  			</div>
+		</li>
+		 </a>
+
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</ul>
+</div>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+</div>

@@ -1,0 +1,11 @@
+plugin:
+    name: 'alfonso.dormrentalapp::lang.plugin.name'
+    description: 'alfonso.dormrentalapp::lang.plugin.description'
+    author: Alfonso
+    icon: oc-icon-home
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Units
+        url: alfonso/dormrentalapp/units
+        icon: icon-home

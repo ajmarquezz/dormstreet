@@ -1,0 +1,84 @@
+fields:
+    type:
+        label: 'Unit Type'
+        options:
+            Apartment: Apartment
+            Dormitory: Dormitory
+        showSearch: true
+        span: auto
+        type: dropdown
+    location:
+        label: Location
+        options:
+            Caloocan: Caloocan
+            Manila: Manila
+            'Las Pinas': 'Las Pinas'
+            Makati: Makati
+            Malabon: Malabon
+            Mandaluyong: Mandaluyong
+            Muntinlupa: Muntinlupa
+            Navotas: Navotas
+            Paranaque: Paranaque
+            Pasay: Pasay
+            Pasig: Pasig
+            Pateros: Pateros
+            'Quezon City': 'Quezon City'
+            'San Juan': 'San Juan'
+            Taguig: Taguig
+            Valenzuela: Valenzuela
+        showSearch: true
+        span: auto
+        type: dropdown
+        commentAbove: 'Select One Location'
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        span: full
+        size: large
+        type: richeditor
+    poster:
+        label: 'Get Images'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    gallery:
+        label: 'More Pictures'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    rooms:
+        label: 'No. of Rooms'
+        span: auto
+        type: number
+    roomsize:
+        label: 'Room Size (sqm)'
+        span: auto
+        type: text
+    price:
+        label: 'Price of Rent'
+        span: auto
+        type: number
+    occupancy:
+        label: 'Total Occupancy'
+        span: auto
+        type: number

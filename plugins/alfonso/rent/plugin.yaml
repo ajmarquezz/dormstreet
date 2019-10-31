@@ -1,0 +1,40 @@
+plugin:
+    name: 'alfonso.rent::lang.plugin.name'
+    description: 'alfonso.rent::lang.plugin.description'
+    author: Alfonso
+    icon: oc-icon-search
+    homepage: ''
+navigation:
+    Rentals:
+        label: Rentals
+        url: alfonso/rent/units
+        icon: icon-search
+        permissions:
+            - alfonso.rent.owner
+        sideMenu:
+            units:
+                label: Units
+                url: alfonso/rent/units
+                icon: icon-home
+            side-menu-item:
+                label: 'My Properties'
+                url: /
+                icon: icon-book
+    Rentals2:
+        label: Rentals
+        url: alfonso/rent/rentalsuser
+        icon: icon-search
+        permissions:
+            - alfonso.rent.user
+        sideMenu:
+            side-menu-item:
+                label: Units
+                url: alfonso/rent/rentalsuser
+                icon: icon-home
+permissions:
+    alfonso.rent.owner:
+        tab: 'alfonso.rent::lang.plugin.name'
+        label: owner
+    alfonso.rent.user:
+        tab: 'alfonso.rent::lang.plugin.name'
+        label: user
